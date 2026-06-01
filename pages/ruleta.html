@@ -31,5 +31,52 @@
         <span></span>
       </button>
     </nav>
-  </header> 
+  </header>
+  
+  <main>
+    <section class="filtros-panel" aria-labelledby="titulo-filtros">
+      <h1 id="titulo-filtros" class="filtros-titulo">Encontrá tu receta ideal</h1>
+      <p class="filtros-subtitulo">Seleccioná los filtros para que te recomendemos qué cocinar.</p>
+
+      <form onsubmit="event.preventDefault();">
+        
+        <fieldset class="filtros-grupo" style="border: none; padding: 0; margin-bottom: 1.75rem;">
+          <legend class="filtros-label" style="margin-bottom: 0.75rem;">1. ¿Qué ingredientes tenés?</legend>
+          <div class="chips-contenedor" id="chipsIngredientes">
+            </div>
+        </fieldset>
+
+        <fieldset class="filtros-grupo" style="border: none; padding: 0; margin-bottom: 1.75rem;">
+          <legend class="filtros-label" style="margin-bottom: 0.75rem;">2. ¿Cuánto tiempo tenés?</legend>
+          <div class="selector-opciones" id="selectorTiempo">
+            <button type="button" class="selector-opcion seleccionado" data-valor="999">Sin límite</button>
+            <button type="button" class="selector-opcion" data-valor="15">Hasta 15 min</button>
+            <button type="button" class="selector-opcion" data-valor="30">Hasta 30 min</button>
+            <button type="button" class="selector-opcion" data-valor="60">Hasta 1 hora</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="filtros-grupo" style="border: none; padding: 0;">
+          <legend class="filtros-label" style="margin-bottom: 0.75rem;">3. Nivel de dificultad</legend>
+          <div class="selector-opciones" id="selectorDificultad">
+            <button type="button" class="selector-opcion seleccionado" data-valor="todas">Cualquiera</button>
+            <button type="button" class="selector-opcion" data-valor="fácil">Fácil</button>
+            <button type="button" class="selector-opcion" data-valor="media">Media</button>
+            <button type="button" class="selector-opcion" data-valor="difícil">Difícil</button>
+          </div>
+        </fieldset>
+
+      </form>
+    </section>
+
+    <section aria-labelledby="titulo-resultados" style="margin-top: 2rem;">
+      <div class="resultados-header">
+        <h2 id="titulo-resultados" class="resultados-titulo">Resultados</h2>
+        <span class="resultados-cantidad" id="cantidadResultados">Cargando...</span>
+      </div>
+      
+      <div class="grilla-recetas" id="grillaRecetas">
+        </div>
+    </section>
+  </main>
 </body>
