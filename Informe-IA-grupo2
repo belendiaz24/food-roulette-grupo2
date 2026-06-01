@@ -1,1 +1,60 @@
+Informe de uso de Inteligencia Artificial
+
+¿Qué herramientas de IA utilizaron?
+
+Durante el desarrollo del proyecto utilizamos Claude (Anthropic)como herramienta de apoyo. La utilizamos principalmente para resolver dudas, revisar fragmentos de código y obtener explicaciones sobre conceptos que todavía no manejamos completamente. La idea no fue reemplazar el trabajo del grupo, sino utilizar la herramienta como recurso complementario para aprender y avanzar cuando surgen bloqueos técnicos.
+
+¿Para qué las usamos la IA?
+
+Usamos la inteligencia artificial como apoyo durante el proyecto. Nos ayudó a organizar la estructura inicial (carpetas, archivos y páginas), resolver dudas sobre funciones de JavaScript como local Storage, filter() y la creación de elementos dinámicos, y a detectar errores en el código. También la aprovechamos para entender mejor conceptos como las rutas relativas, el uso de fetch() y el funcionamiento de Flexbox y Grid en CSS. Finalmente, nos sirvió para redactar y ordenar el archivo README.md. 
+
+¿Qué partes del proyecto fueron asistidas por IA?
+
+La IA tuvo distintos niveles de participación en el proyecto. Propuso la organización inicial de carpetas y ayudó a generar la base del HTML, que luego adaptamos. También escribió el CSS principal y nos orientó en la lógica de los filtros en JavaScript. Explicó el uso de localStorage, aunque lo implementamos nosotros, y generó el listado de recetas del archivo JSON. Finalmente, sugirió la estructura del README, que completamos con la información real del proyecto. 
+
+¿Qué prompts o consultas les resultaron más útiles?
+Las consultas más útiles fueron:
+“Explica me cómo funciona localStorage con un ejemplo simple” — nos ayudó a entender el concepto antes de aplicarlo.
+“¿Cómo filtrar un array de objetos con varias condiciones en JavaScript?” — Fue clave para implementar el filtro de recetas.
+“¿Por qué mi script no encuentra el elemento si está en el <head>?” — aclaró la ubicación correcta del script.
+“¿Cómo usar fetch() para leer un JSON local?” — nos orientó para cargar los datos de recetas.
+“¿Qué son las rutas relativas y cómo se aplican en subcarpetas?” — resolvió los errores de enlaces entre páginas.
+
+¿Qué respuestas de la IA tuvieron que corregir?
+
+En algunos casos tuvimos que ajustar las respuestas de la IA. Por ejemplo, al principio usó la fuente Inter, pero la reemplazamos por Playfair Display y DM Sans para lograr un estilo más acorde al diseño. También modificamos la función de filtrado, que solo consideraba ingredientes, para incluir tiempo y dificultad. El modal inicial no tenía animación de entrada, así que agregamos el efecto transform: translateY consultando la documentación de CSS. Además, cambiamos algunos nombres de clases genéricas como container y wrapper por otros más descriptivos y coherentes con el proyecto. 
+
+¿Qué problemas tuvieron al trabajar con IA?
+Tuvimos algunos desafíos al usar la IA. A veces generaba código correcto pero sin contexto, y tuvimos que adaptarlo manualmente. En otras ocasiones sus explicaciones eran demasiado largas, por lo que aprendimos a hacer consultas más concretas. Al principio también tendemos a copiar sin analizar, así que nos propusimos entender cada línea antes de usarla. Además, hubo errores en las rutas de archivos que corregimos porque no siempre consideraba las subcarpetas.
+¿Qué aprendieron durante el proceso?
+
+Aprendimos a usar HTML semántico con etiquetas como <header>, <main> y <article> en lugar de <div> y <span>. Comprendimos el modelo de caja en CSS y cómo box-sizing: border-box facilita el diseño. También aprendimos a crear layouts responsive con Flexbox y Grid, a manejar datos externos con fetch() y promesas, y a usar localStorage para guardar y recuperar información. Finalmente, entendimos cómo manipular el DOM creando elementos, insertando contenido y asignando eventos con JavaScript. 
+
+¿Qué partes del código puede explicar cada integrante?
+
+Integrante 1 — Camila:
+- Estructura HTML de las 3 páginas y uso de etiquetas semánticas.
+- Sistema de navegación y rutas relativas entre archivos.
+- Implementación del menú hamburguesa para mobile en `main.js`.
+
+Integrante 2 — Iriana:
+- Lógica de filtrado en `ruleta.js` (función `filtrarYMostrar` con los 3 criterios).
+- Renderizado dinámico de cards con `innerHTML` y template literals.
+- Funcionamiento de `localStorage` para guardar y recuperar favoritos.
+
+Integrante 3 — Tommy:
+- Estilos CSS: variables, Flexbox, Grid y animaciones.
+- Implementación del responsive design con media queries.
+- Funcionamiento del modal y sus animaciones de entrada/salida.
+
+¿Qué decisiones tomó el grupo sin depender de la IA?
+
+El grupo tomó varias decisiones por cuenta propia, como elegir el tema Food Roulette enfocado en recetas argentinas cotidianas, definir la paleta de colores y la estética oscura del sitio, y crear el listado de recetas con sus pasos e ingredientes. También decidimos usar emojis en lugar de imágenes externas, organizar las tareas entre los integrantes y definir nombres de clases CSS coherentes para mantener la consistencia del proyecto. 
+
+¿Hubo código sugerido por IA que descartaron? ¿Por qué?
+
+Sí. En un momento la IA propuso usar sessionStorage en lugar de localStorage para los favoritos, pero lo descartamos porque se borra al cerrar la pestaña y necesitábamos que los datos se mantuvieran entre sesiones. También dejamos de lado una versión del modal que usaba la etiqueta <dialog>, ya que no la habíamos visto en clase y preferimos hacerlo con div y clases CSS, como aprendimos. 
+
+Informe realizado los alumnos: Irina Sarah D’Andrea, Camila Belén Díaz y Tommy Jamiro Quispe 
+PROYECTO DE MES DE MAYO
 
