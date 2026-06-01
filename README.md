@@ -4,9 +4,9 @@
 Food Roulette es un recomendador de recetas que te ayuda a decidir qué cocinar según los ingredientes que tenés disponibles, el tiempo que tenés y el nivel de dificultad que preferís. Guardá tus recetas favoritas y volvé a encontrarlas cuando quieras.
 
 ## Integrantes
-- Nombre Apellido
-- Nombre Apellido
-- Nombre Apellido
+- Irina Sarah D'Andrea
+- Camila Belén Díaz
+- Tommy Jamiro Quispe
 
 ## Idea elegida
 Idea 8: Food Roulette — recomendador de recetas basado en ingredientes disponibles, tiempo y dificultad.
