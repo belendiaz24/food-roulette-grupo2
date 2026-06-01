@@ -61,4 +61,7 @@ Idea 8: Food Roulette — recomendador de recetas basado en ingredientes disponi
 ```
 
 ## Uso de IA
-Se utilizaron herramientas de inteligencia artificial como asistentes de código durante el desarrollo. Ver el archivo `informe-ia.md` para más detalles.
+Se utilizaron herramientas de inteligencia artificial como asistentes de código durante el desarrollo.  
+El detalle completo está documentado en el siguiente informe:
+
+[📄 Informe de uso de Inteligencia Artificial grupo 2](./docs/Informe-IA-grupo2.pdf)
