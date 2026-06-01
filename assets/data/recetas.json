@@ -1,0 +1,206 @@
+[
+  {
+    "id": 1,
+    "nombre": "Tortilla de papa",
+    "imagen": "🥚",
+    "ingredientes": ["huevo", "papa", "cebolla", "aceite"],
+    "tiempo": 20,
+    "dificultad": "fácil",
+    "categoria": "salado",
+    "descripcion": "Clásica tortilla española, crocante por fuera y jugosa por dentro.",
+    "pasos": [
+      "Pelar y cortar las papas en rodajas finas.",
+      "Freír las papas con cebolla en aceite a fuego medio.",
+      "Batir los huevos con sal.",
+      "Mezclar papas escurridas con el huevo batido.",
+      "Cocinar en sartén a fuego bajo, dar vuelta y terminar."
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Pasta con tomate y albahaca",
+    "imagen": "🍝",
+    "ingredientes": ["pasta", "tomate", "albahaca", "ajo", "aceite"],
+    "tiempo": 20,
+    "dificultad": "fácil",
+    "categoria": "salado",
+    "descripcion": "Simple, fresco y delicioso. El clásico italiano de todos los días.",
+    "pasos": [
+      "Hervir la pasta con sal.",
+      "Sofreír ajo en aceite de oliva.",
+      "Agregar tomate triturado y cocinar 10 minutos.",
+      "Mezclar la pasta con la salsa.",
+      "Servir con albahaca fresca y queso rallado."
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Arroz con verduras salteadas",
+    "imagen": "🍚",
+    "ingredientes": ["arroz", "zanahoria", "cebolla", "pimiento", "ajo", "aceite"],
+    "tiempo": 30,
+    "dificultad": "fácil",
+    "categoria": "salado",
+    "descripcion": "Un plato completo, colorido y nutritivo con lo que tenés en la heladera.",
+    "pasos": [
+      "Cocinar el arroz según las instrucciones.",
+      "Cortar las verduras en cubos pequeños.",
+      "Saltear ajo y cebolla en aceite caliente.",
+      "Agregar zanahoria y pimiento, cocinar 5 minutos.",
+      "Mezclar con el arroz cocido y condimentar."
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Tostadas con huevo y aguacate",
+    "imagen": "🥑",
+    "ingredientes": ["pan", "huevo", "aguacate", "limón", "sal"],
+    "tiempo": 10,
+    "dificultad": "fácil",
+    "categoria": "salado",
+    "descripcion": "Desayuno o merienda rápida, saludable y muy instagrameable.",
+    "pasos": [
+      "Tostar el pan.",
+      "Pishar el aguacate con limón y sal.",
+      "Esparcir el aguacate sobre el pan.",
+      "Freír o pochar el huevo.",
+      "Colocar el huevo encima y servir."
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Sopa de lenteja",
+    "imagen": "🍲",
+    "ingredientes": ["lenteja", "zanahoria", "cebolla", "tomate", "ajo", "aceite"],
+    "tiempo": 45,
+    "dificultad": "media",
+    "categoria": "salado",
+    "descripcion": "Reconfortante, nutritiva y económica. Perfecta para el frío.",
+    "pasos": [
+      "Remojar las lentejas 30 minutos.",
+      "Sofreír cebolla, ajo y zanahoria.",
+      "Agregar tomate y cocinar 5 minutos.",
+      "Añadir lentejas y cubrir con agua.",
+      "Cocinar 30 minutos a fuego medio con sal y especias."
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Panqueques simples",
+    "imagen": "🥞",
+    "ingredientes": ["harina", "huevo", "leche", "azúcar", "manteca"],
+    "tiempo": 20,
+    "dificultad": "fácil",
+    "categoria": "dulce",
+    "descripcion": "Esponjosos, suaves y listos en minutos. Perfectos para el desayuno.",
+    "pasos": [
+      "Mezclar harina, azúcar y una pizca de sal.",
+      "Agregar huevo, leche y manteca derretida.",
+      "Mezclar hasta obtener una masa suave.",
+      "Cocinar en sartén con un poco de manteca.",
+      "Servir con miel, fruta o dulce de leche."
+    ]
+  },
+  {
+    "id": 7,
+    "nombre": "Ensalada caprese",
+    "imagen": "🥗",
+    "ingredientes": ["tomate", "mozzarella", "albahaca", "aceite", "sal"],
+    "tiempo": 10,
+    "dificultad": "fácil",
+    "categoria": "salado",
+    "descripcion": "Fresca, colorida y elegante. Lista en menos de 10 minutos.",
+    "pasos": [
+      "Cortar tomate y mozzarella en rodajas.",
+      "Alternar en el plato tomate y queso.",
+      "Agregar hojas de albahaca.",
+      "Rociar con aceite de oliva y sal.",
+      "Servir frío."
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "Pollo al horno con papas",
+    "imagen": "🍗",
+    "ingredientes": ["pollo", "papa", "ajo", "aceite", "limón", "sal"],
+    "tiempo": 60,
+    "dificultad": "media",
+    "categoria": "salado",
+    "descripcion": "El clásico de los domingos. Simple de preparar, irresistible para comer.",
+    "pasos": [
+      "Condimentar el pollo con ajo, limón, aceite y sal.",
+      "Cortar papas en gajos y condimentarlas.",
+      "Colocar todo en una asadera.",
+      "Hornear a 200°C durante 50-60 minutos.",
+      "Dar vuelta a mitad de cocción para dorar bien."
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Brownie de chocolate",
+    "imagen": "🍫",
+    "ingredientes": ["chocolate", "manteca", "azúcar", "huevo", "harina"],
+    "tiempo": 40,
+    "dificultad": "media",
+    "categoria": "dulce",
+    "descripcion": "Húmedo, intenso y perfectamente chocolatoso. El postre definitivo.",
+    "pasos": [
+      "Derretir chocolate con manteca a baño maría.",
+      "Agregar azúcar y mezclar bien.",
+      "Incorporar los huevos de a uno.",
+      "Añadir la harina tamizada y mezclar.",
+      "Hornear en molde a 180°C por 25 minutos."
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Empanadas de carne",
+    "imagen": "🥟",
+    "ingredientes": ["carne", "cebolla", "huevo", "aceite", "pimiento", "sal"],
+    "tiempo": 60,
+    "dificultad": "difícil",
+    "categoria": "salado",
+    "descripcion": "El orgullo argentino. Con un buen relleno y el repulgue perfecto.",
+    "pasos": [
+      "Sofreír cebolla y pimiento picados.",
+      "Agregar la carne molida y cocinar bien.",
+      "Condimentar con sal, comino y pimentón.",
+      "Rellenar los discos de empanada y repulgar.",
+      "Hornear a 200°C por 20 minutos o freír."
+    ]
+  },
+  {
+    "id": 11,
+    "nombre": "Banana split",
+    "imagen": "🍌",
+    "ingredientes": ["banana", "helado", "chocolate", "crema", "azúcar"],
+    "tiempo": 10,
+    "dificultad": "fácil",
+    "categoria": "dulce",
+    "descripcion": "El postre más divertido. Sin horno, sin cocción, solo placer.",
+    "pasos": [
+      "Cortar la banana al medio a lo largo.",
+      "Colocar en un plato largo.",
+      "Poner bolas de helado en el centro.",
+      "Bañar con chocolate derretido.",
+      "Decorar con crema batida."
+    ]
+  },
+  {
+    "id": 12,
+    "nombre": "Wok de fideos con pollo",
+    "imagen": "🍜",
+    "ingredientes": ["fideos", "pollo", "zanahoria", "cebolla", "ajo", "aceite"],
+    "tiempo": 30,
+    "dificultad": "media",
+    "categoria": "salado",
+    "descripcion": "Rápido, sabroso y con toda la vibra asiática que necesitás.",
+    "pasos": [
+      "Cocinar los fideos y reservar.",
+      "Cortar el pollo en tiras y saltearlo.",
+      "Agregar verduras cortadas en juliana.",
+      "Saltear todo junto a fuego fuerte.",
+      "Mezclar con los fideos y salsa de soja."
+    ]
+  }
+]

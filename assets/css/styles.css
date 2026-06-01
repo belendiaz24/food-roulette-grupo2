@@ -1,0 +1,761 @@
+/* ============================================
+   VARIABLES CSS
+   Son "cajitas" donde guardamos valores que
+   vamos a reusar en todo el sitio. Si queremos
+   cambiar un color, lo cambiamos acá y se
+   actualiza en todos lados automáticamente.
+   ============================================ */
+:root {
+  --color-fondo: #0f0f0f;
+  --color-fondo-card: #1a1a1a;
+  --color-fondo-card-hover: #222222;
+  --color-acento: #ff6b35;
+  --color-acento-claro: #ff8c5a;
+  --color-texto: #f0ede8;
+  --color-texto-suave: #a09a92;
+  --color-borde: #2a2a2a;
+  --color-exito: #4caf50;
+  --color-favorito: #e91e63;
+  --fuente-titulo: 'Playfair Display', Georgia, serif;
+  --fuente-cuerpo: 'DM Sans', 'Segoe UI', sans-serif;
+  --radio-borde: 12px;
+  --sombra: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --transicion: all 0.3s ease;
+}
+
+/* ============================================
+   RESET Y BASE
+   Borramos los estilos que el navegador aplica
+   por defecto (márgenes, paddings, etc.) para
+   empezar con una hoja en blanco.
+   ============================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* El padding se incluye dentro del ancho del elemento */
+}
+
+html {
+  scroll-behavior: smooth; /* Scroll suave al navegar a secciones */
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ============================================
+   HEADER Y NAVEGACIÓN
+   ============================================ */
+header {
+  background-color: rgba(15, 15, 15, 0.95);
+  border-bottom: 1px solid var(--color-borde);
+  position: sticky; /* Se queda pegado arriba al hacer scroll */
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex; /* Flexbox: acomoda hijos en fila */
+  justify-content: space-between; /* Logo a la izquierda, links a la derecha */
+  align-items: center; /* Centrado vertical */
+}
+
+.nav-logo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.5rem;
+  color: var(--color-acento);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.nav-logo span {
+  color: var(--color-texto);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem; /* Espacio entre links */
+}
+
+.nav-links a {
+  color: var(--color-texto-suave);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transicion);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Línea animada debajo del link al pasar el mouse */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-acento);
+  transition: var(--transicion);
+}
+
+.nav-links a:hover {
+  color: var(--color-texto);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.activo {
+  color: var(--color-acento);
+}
+
+.nav-links a.activo::after {
+  width: 100%;
+}
+
+/* Botón hamburguesa para mobile (oculto en desktop) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--color-texto);
+  transition: var(--transicion);
+}
+
+/* ============================================
+   CONTENIDO PRINCIPAL
+   ============================================ */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion);
+  border: 2px solid transparent;
+}
+
+.btn-primario {
+  background-color: var(--color-acento);
+  color: white;
+}
+
+.btn-primario:hover {
+  background-color: var(--color-acento-claro);
+  transform: translateY(-2px); /* Sube un poquito al pasar el mouse */
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: var(--color-acento);
+  border-color: var(--color-acento);
+}
+
+.btn-secundario:hover {
+  background-color: var(--color-acento);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   CARDS DE RECETAS
+   ============================================ */
+.card {
+  background-color: var(--color-fondo-card);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  overflow: hidden;
+  transition: var(--transicion);
+  position: relative;
+}
+
+.card:hover {
+  background-color: var(--color-fondo-card-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+  border-color: var(--color-acento);
+}
+
+.card-emoji {
+  font-size: 4rem;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: rgba(255, 107, 53, 0.08);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.15rem;
+  color: var(--color-texto);
+  margin-bottom: 0.5rem;
+}
+
+.card-descripcion {
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.card-meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  background-color: rgba(255, 107, 53, 0.15);
+  color: var(--color-acento);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+.badge-verde {
+  background-color: rgba(76, 175, 80, 0.15);
+  color: var(--color-exito);
+  border-color: rgba(76, 175, 80, 0.3);
+}
+
+.card-acciones {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Botón de favorito */
+.btn-favorito {
+  background: none;
+  border: 2px solid var(--color-borde);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  color: var(--color-texto-suave);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: var(--fuente-cuerpo);
+  transition: var(--transicion);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-favorito:hover,
+.btn-favorito.guardado {
+  border-color: var(--color-favorito);
+  color: var(--color-favorito);
+  background-color: rgba(233, 30, 99, 0.1);
+}
+
+/* Grilla de cards */
+.grilla-recetas {
+  display: grid;
+  /* auto-fill: crea tantas columnas como quepan.
+     minmax(280px, 1fr): cada columna mide mínimo 280px y máximo 1 fracción */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ============================================
+   SECCIÓN HERO (página de inicio)
+   ============================================ */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 4rem;
+}
+
+.hero-emoji {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+/* Animación de flotación */
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.hero-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(2.5rem, 6vw, 4.5rem); /* Tamaño fluido según pantalla */
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--color-texto);
+}
+
+.hero-titulo span {
+  color: var(--color-acento);
+  display: block;
+}
+
+.hero-descripcion {
+  font-size: 1.1rem;
+  color: var(--color-texto-suave);
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-acciones {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   SECCIÓN DE CARACTERÍSTICAS (inicio)
+   ============================================ */
+.secccion-features {
+  padding: 3rem 0;
+  border-top: 1px solid var(--color-borde);
+}
+
+.features-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background-color: var(--color-fondo-card);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 1.75rem;
+  text-align: center;
+  transition: var(--transicion);
+}
+
+.feature-card:hover {
+  border-color: var(--color-acento);
+  transform: translateY(-3px);
+}
+
+.feature-icono {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-titulo {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.feature-texto {
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+  line-height: 1.5;
+}
+
+/* ============================================
+   FILTROS (página ruleta)
+   ============================================ */
+.filtros-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.filtros-subtitulo {
+  color: var(--color-texto-suave);
+  margin-bottom: 2rem;
+}
+
+.filtros-panel {
+  background-color: var(--color-fondo-card);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.filtros-grupo {
+  margin-bottom: 1.75rem;
+}
+
+.filtros-grupo:last-child {
+  margin-bottom: 0;
+}
+
+.filtros-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+/* Chips seleccionables (ingredientes) */
+.chips-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  border: 2px solid var(--color-borde);
+  background: none;
+  color: var(--color-texto-suave);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-family: var(--fuente-cuerpo);
+  transition: var(--transicion);
+}
+
+.chip:hover {
+  border-color: var(--color-acento);
+  color: var(--color-acento);
+}
+
+.chip.seleccionado {
+  background-color: var(--color-acento);
+  border-color: var(--color-acento);
+  color: white;
+}
+
+/* Selector de tiempo */
+.selector-opciones {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.selector-opcion {
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radio-borde);
+  border: 2px solid var(--color-borde);
+  background: none;
+  color: var(--color-texto-suave);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: var(--fuente-cuerpo);
+  transition: var(--transicion);
+}
+
+.selector-opcion:hover {
+  border-color: var(--color-acento);
+  color: var(--color-acento);
+}
+
+.selector-opcion.seleccionado {
+  background-color: rgba(255, 107, 53, 0.15);
+  border-color: var(--color-acento);
+  color: var(--color-acento);
+}
+
+/* Área de resultados */
+.resultados-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.resultados-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+}
+
+.resultados-cantidad {
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+}
+
+.mensaje-vacio {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--color-texto-suave);
+}
+
+.mensaje-vacio p:first-child {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   PÁGINA DE FAVORITOS
+   ============================================ */
+.favoritos-header {
+  margin-bottom: 2rem;
+}
+
+.favoritos-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.favoritos-subtitulo {
+  color: var(--color-texto-suave);
+}
+
+/* ============================================
+   MODAL (ventana flotante con detalle)
+   ============================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0; /* Cubre toda la pantalla */
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transicion);
+}
+
+.modal-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background-color: var(--color-fondo-card);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  transform: translateY(20px);
+  transition: var(--transicion);
+}
+
+.modal-overlay.visible .modal {
+  transform: translateY(0);
+}
+
+.modal-cerrar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.btn-cerrar {
+  background: none;
+  border: none;
+  color: var(--color-texto-suave);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transicion);
+  line-height: 1;
+}
+
+.btn-cerrar:hover {
+  color: var(--color-texto);
+}
+
+.modal-emoji {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.modal-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal-descripcion {
+  color: var(--color-texto-suave);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.modal-pasos {
+  margin-top: 1.25rem;
+}
+
+.modal-pasos h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-acento);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.modal-pasos ol {
+  padding-left: 1.25rem;
+}
+
+.modal-pasos li {
+  margin-bottom: 0.5rem;
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  border-top: 1px solid var(--color-borde);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--color-texto-suave);
+  font-size: 0.875rem;
+  margin-top: 4rem;
+}
+
+footer span {
+  color: var(--color-acento);
+}
+
+/* ============================================
+   RESPONSIVE - MEDIA QUERIES
+   Acá es donde le decimos al CSS qué hacer
+   cuando la pantalla es más chica.
+   "max-width: 768px" significa "si la pantalla
+   mide 768px o menos, aplicar estas reglas"
+   ============================================ */
+@media (max-width: 768px) {
+  /* Navegación: el menú se oculta y aparece el botón hamburguesa */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(15, 15, 15, 0.98);
+    flex-direction: column; /* Links en columna */
+    padding: 1.5rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--color-borde);
+  }
+
+  .nav-links.abierto {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex; /* Mostramos el botón hamburguesa */
+  }
+
+  /* Hero más compacto en mobile */
+  .hero {
+    padding: 3rem 0.5rem 2.5rem;
+  }
+
+  .hero-emoji {
+    font-size: 3.5rem;
+  }
+
+  /* Grilla: 1 columna en mobile */
+  .grilla-recetas {
+    grid-template-columns: 1fr;
+  }
+
+  /* Filtros: opciones apiladas */
+  .selector-opciones {
+    flex-direction: column;
+  }
+
+  .selector-opcion {
+    text-align: center;
+  }
+
+  /* Modal ocupa más pantalla */
+  .modal {
+    padding: 1.5rem;
+  }
+
+  .modal-titulo {
+    font-size: 1.4rem;
+  }
+
+  main {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra pequeño: ajuste de tipografía */
+  .nav-logo {
+    font-size: 1.25rem;
+  }
+
+  .hero-titulo {
+    font-size: 2rem;
+  }
+
+  .hero-descripcion {
+    font-size: 0.95rem;
+  }
+
+  .filtros-panel {
+    padding: 1.25rem;
+  }
+}

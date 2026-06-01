@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!--
+  <!DOCTYPE html> le dice al navegador que este
+  archivo usa HTML5 (la versión moderna).
+  Siempre va primera, antes de todo.
+-->
+<html lang="es">
+<!--
+  <html> es el elemento raíz que envuelve todo.
+  lang="es" le dice al navegador (y a los lectores
+  de pantalla para personas con discapacidad visual)
+  que el idioma es español.
+-->
+
+<head>
+  <!--
+    <head> contiene información SOBRE la página,
+    pero no se muestra al usuario. Acá van:
+    - El título de la pestaña
+    - Links a estilos CSS
+    - Fuentes externas
+    - Configuraciones del viewport
+  -->
+
+  <!-- Define el tipo de caracteres. UTF-8 soporta
+       tildes, ñ, emojis, etc. -->
+  <meta charset="UTF-8">
+
+  <!-- Esto es CLAVE para el responsive.
+       Le dice al navegador que el ancho de la página
+       debe ser el ancho real del dispositivo (no hacer
+       zoom out automático como hacía antes en mobile). -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título que aparece en la pestaña del navegador -->
+  <title>Food Roulette 🎰 | ¿Qué cocinamos hoy?</title>
+
+  <!-- Importamos las fuentes de Google Fonts.
+       Playfair Display: para títulos elegantes.
+       DM Sans: para el cuerpo de texto, limpio y moderno. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Vinculamos nuestro archivo CSS.
+       La ruta es RELATIVA: "assets/css/styles.css"
+       significa "en la carpeta assets, luego css, luego styles.css"
+       relativo a donde está ESTE archivo (index.html). -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <!--
+    <body> contiene TODO lo que el usuario ve en pantalla.
+    Usamos etiquetas semánticas para organizar el contenido:
+    <header>, <nav>, <main>, <section>, <footer>
+    Estas etiquetas le dan SIGNIFICADO al contenido.
+  -->
+
+  <!-- HEADER: encabezado de la página. Contiene el nav -->
+  <header>
+
+    <!-- NAV: barra de navegación -->
+    <nav>
+
+      <!-- Logo del sitio. Es un link que lleva al inicio. -->
+      <a href="index.html" class="nav-logo">
+        Food<span>Roulette</span> 🎰
+      </a>
+
+      <!-- Links de navegación -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="activo">Inicio</a></li>
+        <li><a href="pages/ruleta.html">Buscar receta</a></li>
+        <li><a href="pages/guardadas.html">Mis favoritas ❤️</a></li>
+      </ul>
+
+      <!--
+        Botón hamburguesa: solo visible en mobile.
+        Las 3 <span> forman las 3 líneas del icono.
+        JavaScript lo hace funcionar.
+        aria-label es para accesibilidad: describe el botón
+        para lectores de pantalla.
+      -->
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </nav>
+  </header>
+
+  <!-- MAIN: contenido principal de la página -->
+  <main>
+
+    <!-- SECCIÓN HERO: la primera sección grande que ve el usuario -->
+    <section class="hero">
+
+      <!-- Emoji animado con CSS (keyframe "flotar") -->
+      <span class="hero-emoji">🎰</span>
+
+      <h1 class="hero-titulo">
+        ¿Qué cocinamos
+        <span>hoy?</span>
+      </h1>
+      <!--
+        <h1> es el título más importante de la página.
+        Solo debe haber UNO por página.
+        Los buscadores lo usan para entender de qué trata.
+      -->
+
+      <p class="hero-descripcion">
+        Decinos qué ingredientes tenés, cuánto tiempo disponés 
+        y qué tan difícil querés que sea. Nosotros te recomendamos
+        la receta perfecta. 🍳
+      </p>
+
+      <!-- Acciones: dos botones de llamada a la acción -->
+      <div class="hero-acciones">
+        <a href="pages/ruleta.html" class="btn btn-primario">
+          🎯 Buscar receta
+        </a>
+        <a href="pages/guardadas.html" class="btn btn-secundario">
+          ❤️ Mis favoritas
+        </a>
+      </div>
+
+    </section>
+
+    <!-- SECCIÓN FEATURES: explicamos cómo funciona -->
+    <section class="secccion-features">
+
+      <h2 class="features-titulo">¿Cómo funciona?</h2>
+      <!--
+        <h2> es un subtítulo, secundario al h1.
+        La jerarquía de títulos es importante:
+        h1 > h2 > h3 > h4 > h5 > h6
+      -->
+
+      <div class="features-grid">
+
+        <!-- Cada feature-card es un ARTICLE porque
+             es un bloque de contenido independiente -->
+        <article class="feature-card">
+          <div class="feature-icono">🥕</div>
+          <h3 class="feature-titulo">Elegí tus ingredientes</h3>
+          <p class="feature-texto">
+            Seleccioná lo que tenés en la heladera o la despensa.
+            Sin complicaciones.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icono">⏱️</div>
+          <h3 class="feature-titulo">Decinos tu tiempo</h3>
+          <p class="feature-texto">
+            ¿Tenés 10 minutos o toda la tarde? Filtramos las recetas
+            según tu disponibilidad.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icono">🎯</div>
+          <h3 class="feature-titulo">Elegí la dificultad</h3>
+          <p class="feature-texto">
+            Desde lo más simple hasta recetas con más técnica.
+            Vos decidís el desafío.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icono">❤️</div>
+          <h3 class="feature-titulo">Guardá tus favoritas</h3>
+          <p class="feature-texto">
+            Las recetas que te gustan quedan guardadas aunque
+            cierres el navegador.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER: pie de página -->
+  <footer>
+    <p>
+      Hecho con <span>❤️</span> y mucha hambre &mdash; 
+      Food Roulette &copy; 2025
+    </p>
+  </footer>
+
+  <!--
+    El script va AL FINAL del body, justo antes del </body>.
+    ¿Por qué? Porque el navegador lee el HTML de arriba hacia
+    abajo. Si ponemos el script arriba, intentará ejecutarlo
+    antes de que existan los elementos HTML (botones, divs, etc.)
+    y fallará. Al ponerlo al final, todo el HTML ya fue cargado.
+    
+    La ruta "assets/js/main.js" es relativa a index.html.
+  -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
